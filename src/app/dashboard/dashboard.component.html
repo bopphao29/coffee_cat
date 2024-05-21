@@ -1,0 +1,35 @@
+<body>
+    <mat-card>
+        <b><span>Thống kê</span></b>
+    </mat-card>
+    <br>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2 class="title">Danh mục</h2>
+                    <h1 class="title">{{data?.category || 0}}</h1>
+                    <p><button class="button" [routerLink]="['/category']">Chi tiết</button></p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2 class="title">Sản phẩm</h2>
+                    <h1 class="title">{{data?.category || 0}}</h1>
+                    <p><button class="button" [routerLink]="['/product']">Chi tiết</button></p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2 class="title">Hóa đơn</h2>
+                    <h1 class="title">{{data?.category || 0}}</h1>
+                    <p><button class="button" [routerLink]="['/bill']">Chi tiết</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

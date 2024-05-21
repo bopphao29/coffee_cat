@@ -1,0 +1,172 @@
+<!-- <section class="page-section" id="about">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Best Seller</h2>
+        </div>
+        <ul class="timeline">
+            <li><a href="../../assets/img/1.jpg" target="_blank">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/img/1.jpg"
+                            alt="..." /></div>
+                </a>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4>Pizza</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p class="text-muted">Pizza is an Italian dish consisting of a usually round, flattened base of
+                            leavened wheat-based dough topped with tomatoes, cheese, and often various other
+                            ingredients, which is then baked at a high temperature, traditionally in a wood-fired oven.
+                            A small pizza is sometimes called a pizzetta.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <a href="../../assets/img/2.jpg" target="_blank">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/img/2.jpg"
+                            alt="..." /></div>
+                </a>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4>Biryani</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p class="text-muted">Biryani is a mixed rice dish. It is made with Indian spices, rice, and
+                            meat usually that of chicken, fish, and sometimes, in addition, eggs or vegetables such as
+                            potatoes in certain regional varieties.</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="../../assets/img/3.jpg" target="_blank">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/img/3.jpg"
+                            alt="..." /></div>
+                </a>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4>Pasta</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p class="text-muted">Pasta is a type of food typically made from an unleavened dough of wheat
+                            flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by
+                            boiling or baking.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <a href="../../assets/img/4.jpg" target="_blank">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="../../assets/img/4.jpg"
+                            alt="..." /></div>
+                </a>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4>Molten chocolate cake</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p class="text-muted">Molten chocolate cake is a popular dessert that combines the elements of a
+                            chocolate cake and a soufflé. Its name derives from the dessert's liquid chocolate center,
+                            and it is also known as chocolate moelleux, chocolate lava cake, or simply lava cake.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-image">
+                    <h4>
+                        Be Part
+                        <br />
+                        Of Our
+                        <br />
+                        Cafe!
+                    </h4>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section> -->
+
+<mat-card class="ml-2 mt-2 mb-3">
+    <mat-form-field appearance="outline" class="w-50">
+        <mat-label>Tìm kiếm sản phẩm</mat-label>
+        <input #searchkeyword matInput name="searchKey" (keyup)="applyFilter($event)" id="searchKey" placeholder="Nhập sản phẩm tìm kiếm">
+    </mat-form-field>
+    <button mat-raised-button color="primary">
+        <mat-icon>add_shopping_cart</mat-icon>
+    </button>
+    <!-- 
+    <mat-card>
+        <div fxLayout="row wrap ">
+            <div fxFlex="25" fxFlex.sm="33.3" fxFlex.xs="50" *ngFor="let tile of tiles">
+                <mat-grid-list cols="1" rowHeight="1:1">
+                    <mat-grid-tile>
+                        <mat-card class="example-card mt-5">
+
+                            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                                alt="Photo of a Shiba Inu">
+                            <mat-card-content>
+                                <p>
+                                    The Shiba Inu is
+
+                                </p>
+                            </mat-card-content>
+                            <mat-card-actions>
+                                <button mat-button>+ Thêm</button>
+
+                            </mat-card-actions>
+                        </mat-card>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </div>
+        </div>
+    </mat-card> -->
+
+    <!-- <div class="text-center mt-5">
+    
+       <button type="button" mat-raised-button color="primary">Load more</button>
+    </div> -->
+</mat-card>
+
+<mat-card>
+    <mat-card fxlayout="column" fxlayout.gt-sm="row wrap"
+    style="flex-flow: wrap; box-sizing: border-box; display: flex;" >
+        <div *ngFor="let item of products">
+            
+            <div fxFlex="25%">
+                <mat-card class="mat-mdc-card mdc-card custom-card">
+                    <mat-card-header fxlayoutalign="space-between center"
+                        class="mat-mdc-card-header bg-warn"
+                        style="place-content: center space-between; align-items: center; flex-direction: row; box-sizing: border-box; display: flex;">
+
+                    </mat-card-header><img mat-card-image=""
+                        src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="2"
+                        class="mat-mdc-card-image mdc-card__media">
+                    <mat-card-content class="mat-mdc-card-content py-3">
+                        <div class="mt-1">
+                            <p><b>{{item.name}}</b></p>
+                        </div>
+
+                        <div class="mt-2">
+                            <p style="white-space: inherit;  overflow: hidden; text-overflow: ellipsis;">Mô tả : {{item.description}}</p>
+                        </div>
+
+                        <div class="mt-2">
+                            <b>Giá bán : {{item.price}}</b> &nbsp; <b style="text-decoration: line-through; color: red;">{{item.price + 15000}}</b>
+                        </div>
+                        <div class="text-center mt-5">
+
+                            <button type="button" mat-raised-button color="primary" (click)="detailProduct(item.id)">Chi tiết</button>
+                        </div>
+                        <!-- <div class="mt-2">
+                            <button type="button" mat-raised-button color="warn">View Details</button>
+                        </div> -->
+                    </mat-card-content><mat-divider role="separator" class="mat-divider mat-divider-horizontal"
+                        aria-orientation="horizontal"></mat-divider><mat-card-actions fxlayoutalign="end center"
+                        class="mat-mdc-card-actions mdc-card__actions secondary-text-color"
+                        style="place-content: center flex-end; align-items: center; flex-direction: row; box-sizing: border-box; display: flex;">
+
+
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+            
+        </div>
+    </mat-card>
+</mat-card>

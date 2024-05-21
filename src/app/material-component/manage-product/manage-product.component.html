@@ -1,0 +1,59 @@
+<mat-card>
+    <b><span>Quản Lý Sản Phẩm</span></b>
+    <button mat-flat-button color="primary" class="float-right" (click)="handleAddAction()">Thêm sản phẩm</button>
+</mat-card>
+<mat-card>
+    <mat-form-field appearance="fill">
+        <mat-label>Tìm kiếm</mat-label>
+        <input type="text" matInput (keyup)="applyFilter($event)" #input>
+    </mat-form-field>
+</mat-card>
+<hr>
+<div class="responsive_table">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef>Ảnh</th>
+            <td mat-cell *matCellDef="let element"><img width="200px" [src]="element.image" alt=""></td>
+            <td ></td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Tên</th>
+            <td mat-cell *matCellDef="let element">{{element.name}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="categoryName">
+            <th mat-header-cell *matHeaderCellDef>Danh mục</th>
+            <td mat-cell *matCellDef="let element">{{element.categoryName}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef>Mô tả</th>
+            <td mat-cell *matCellDef="let element">{{element.description}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef>Giá tiền</th>
+            <td mat-cell *matCellDef="let element">{{element.price}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef class="action-link">Action</th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button color="primary" matTooltip="Edit" (click)="handleEditAction(element)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" matTooltip="Delete" (click)="handleDeleteAction(element)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <mat-slide-toggle (change)="onChange($event.checked, element.id)" matTooltip="Kích hoạt hoặc vô hiệu hóa sản phẩm" [checked]="element.status">
+
+                </mat-slide-toggle>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true" ></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+</div>
